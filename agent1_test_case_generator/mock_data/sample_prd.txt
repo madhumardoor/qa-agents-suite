@@ -1,0 +1,16 @@
+Title: User Login Feature
+
+As a registered user, I want to log into the application using my email and
+password, so that I can access my personalized dashboard.
+
+Acceptance Criteria:
+1. User can enter email and password on the login page.
+2. If credentials are valid, user is redirected to /dashboard within 2 seconds.
+3. If credentials are invalid, an error message "Invalid email or password" is shown.
+4. After 5 consecutive failed attempts, the account is locked for 15 minutes.
+5. Password field must mask input characters.
+6. "Forgot password" link navigates to the password reset flow.
+7. Login must work on Chrome, Firefox, Safari, and Edge (latest 2 versions).
+8. Login form must be accessible via keyboard navigation only.
+9. Session token must expire after 30 minutes of inactivity.
+10. Email field must validate standard email format before submission.

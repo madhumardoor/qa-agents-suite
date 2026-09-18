@@ -1,0 +1,20 @@
+# Shared
+python-dotenv==1.0.1
+requests==2.32.3
+
+# LLM clients (Agent 1, Agent 3 live mode)
+anthropic==0.39.0
+openai==1.57.0
+
+# Agent 2: Self-Healing Automation Agent
+beautifulsoup4==4.12.3
+playwright==1.49.0
+
+# Agent 3: Bug Report & Log Analyzer
+# (uses only shared deps above)
+
+# Agent 4: API Test & Security Agent
+# (uses only shared deps above)
+
+# Agent 5: Visual Regression & Accessibility Agent
+Pillow==11.0.0

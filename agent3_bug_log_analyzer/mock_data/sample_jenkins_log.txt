@@ -1,0 +1,51 @@
+Started by upstream project "checkout-service-pipeline" build number 482
+Running on agent-linux-04 in /var/jenkins/workspace/checkout-service
+[Pipeline] stage
+[Pipeline] { (Test)
++ npm run test:integration
+
+> checkout-service@2.14.0 test:integration
+> jest --config jest.integration.config.js
+
+  PASS  src/tests/cart.test.js
+  PASS  src/tests/inventory.test.js
+  FAIL  src/tests/payment.test.js
+    PaymentService > processPayment
+      ✕ should successfully charge a valid card (1243 ms)
+
+    ● PaymentService > processPayment > should successfully charge a valid card
+
+      TypeError: Cannot read properties of undefined (reading 'transactionId')
+
+        at PaymentService.processPayment (src/services/PaymentService.js:87:34)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async Object.<anonymous> (src/tests/payment.test.js:45:20)
+
+      87 |   const receipt = response.data.transactionId;
+      88 |   logger.info(`Payment processed: ${receipt}`);
+         |               ^
+      89 |   return receipt;
+
+      Received: undefined
+      Expected: a string matching /^txn_[a-z0-9]+$/
+
+  FAIL  src/tests/payment.test.js
+    PaymentService > processPayment
+      ✕ should retry on gateway timeout (5023 ms)
+
+    ● PaymentService > processPayment > should retry on gateway timeout
+
+      Error: connect ETIMEDOUT 10.0.4.22:443
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1355:16)
+        at async PaymentGatewayClient.charge (src/services/PaymentGatewayClient.js:52:11)
+
+Test Suites: 1 failed, 2 passed, 3 total
+Tests:       2 failed, 14 passed, 16 total
+Time:        18.442 s
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Report)
+Build step 'Post Actions' marked build as FAILURE
+Finished: FAILURE
