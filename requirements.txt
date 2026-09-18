@@ -1,6 +1,6 @@
 # Shared
-python-dotenv==1.0.1
-requests==2.32.3
+python-dotenv==1.2.2
+requests==2.33.0
 
 # LLM clients (Agent 1, Agent 3 live mode)
 anthropic==0.39.0
@@ -17,4 +17,4 @@ playwright==1.49.0
 # (uses only shared deps above)
 
 # Agent 5: Visual Regression & Accessibility Agent
-Pillow==11.0.0
+Pillow==12.3.0
