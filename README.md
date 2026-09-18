@@ -1,4 +1,4 @@
-# 5 AI QA Agents Suite — 2026
+# 5 AI QA Agents Suite - 2026
 
 Five working AI-powered QA automation agents, each runnable standalone,
 each supporting a **mock mode** (zero API keys, runs instantly) and a
